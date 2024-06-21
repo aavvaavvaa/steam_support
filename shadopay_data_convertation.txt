@@ -1,0 +1,78 @@
+function convertToTimestamp(dateStr, timeStr=null) {
+    let timeStrNew = timeStr;
+    if (timeStr && timeStr.includes("am")) {
+        timeStrNew = timeStr.replace("am", " am")
+    } else if (timeStr && timeStr.includes("pm")) {
+        timeStrNew = timeStr.replace("pm", " pm")
+    }
+    let dateTimeStr;
+    if (timeStr == null) {
+        dateTimeStr = dateStr;
+    } else {
+        dateTimeStr = `${dateStr} ${timeStrNew}`;
+    }
+
+    const dateObj = new Date(dateTimeStr);
+    //console.log(dateTimeStr)
+
+    const timestamp = Math.floor(dateObj.getTime() / 1000);
+
+    return timestamp;
+}
+function timeConverter(timestamp, m=1) {
+    let t = timestamp*m
+    let a = new Date(t).toLocaleDateString("en-GB")
+    let b = new Date(t).toLocaleTimeString("en-GB")
+    let c = b.split(':')
+    let d = c[0] + ":" + c[1]
+    //let e = `${a} ${d}`
+    return [a,d]
+}
+function convert_obj(obj) {
+    // obj = https://raw.githubusercontent.com/aavvaavvaa/steam_support/main/shadowpay_raw_data_wo_spaces.txt
+    let arr = []
+    for (let k of obj.reverse()) {
+        for (let s of k.items.reverse()) {
+            arr.push(s)
+        }
+    }
+    let main_obj = {}
+    for (let i of arr) {
+        let icon = "https://community.akamai.steamstatic.com/economy/image/" + i.item.icon_url
+        let name = i.steam_market_hash_name
+        let price = i.price
+        let timestamp_created = convertToTimestamp(i.time_created)+10800
+        let timestamp_finished = convertToTimestamp(i.time_finished)+10800
+        let to_date_created = timeConverter(timestamp_created, 1000)
+        let to_date_finished = timeConverter(timestamp_finished, 1000)
+
+        let time_created_date = to_date_created[0]
+        let time_created_time = to_date_created[1]
+        let time_finished_date = to_date_finished[0]
+        let time_finished_time = to_date_finished[1]
+        let ob = {
+            icon: icon,
+            name: name,
+            price: price,
+            timestamp: timestamp_finished,
+            time_created_date: time_created_date,
+            time_created_time: time_created_time,
+            time_finished_date: time_finished_date,
+            time_finished_time: time_finished_time
+        }
+        let date_exist = main_obj[time_finished_date]
+        if (!date_exist) {
+            let t = {}
+            t[time_finished_time] = [ob]
+            main_obj[time_finished_date] = t
+        } else {
+            if (!date_exist[time_finished_time]) {
+                date_exist[time_finished_time] = [ob]
+            } else {
+                date_exist[time_finished_time].push(ob)
+            }
+        }
+    }
+    console.log(main_obj)
+    return main_obj
+}
