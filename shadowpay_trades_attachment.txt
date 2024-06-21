@@ -1,0 +1,199 @@
+var cc = 1
+var cc_other = 1
+
+function createElementFromHTML(htmlString) {
+    var div = document.createElement('div');
+    div.innerHTML = htmlString.trim();
+
+    return div.firstChild;
+}
+function make_html(a,b,c,d,e,f,g,h) {
+    let num = a;
+    let icon = b;
+    let name = c;
+    let price = d;
+    let time_1 = e;
+    let time_2 = f;
+    let date_1 = g;
+    let date_2 = h;
+    var base = `<table data-v-75ee7e3d="" style="width:120%; background-color:#1D2328;transform:scale(0.9); position:absolute; top: 4px; left: 845px;">
+<thead data-v-75ee7e3d="" style="height: 12px;background: 0 0;
+"><tr data-v-75ee7e3d="" class="" style=" "><th data-v-75ee7e3d="" style="text-align: center;cursor: auto;color: #f1f1f1;white-space: nowrap;" class=""><div data-v-75ee7e3d="" class="base-table__serial-number-th" style="display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:600;letter-spacing:.01em;min-width:28px;font-size:12px;line-height:14px;color:var(--secondary-color-20);">
+            №
+          </div></th> <!----> <th data-v-75ee7e3d="" class="" style="width: 100px;font-weight:500;font-size:14px;color: #f1f1f1;"><div data-v-75ee7e3d="" class="base-table__sort-column-block" style="display:flex;align-items:center;grid-column-gap:9px;-moz-column-gap:9px;column-gap:9px;justify-content:center;"><img data-v-75ee7e3d=""> <span data-v-75ee7e3d="" style="font-style: normal;font-weight: 600;font-size: 12px;line-height: 14px;letter-spacing: .01em;color: var(--secondary-color-20);">Item</span> <!----></div></th><th data-v-75ee7e3d="" class="sortable__col" style="width: 150px;font-weight:500;font-size:14px;color: #f1f1f1;"><div data-v-75ee7e3d="" class="base-table__sort-column-block hover" style="display:flex;align-items:center;grid-column-gap:9px;-moz-column-gap:9px;column-gap:9px;justify-content:center;"><img data-v-75ee7e3d=""> <span data-v-75ee7e3d="" class="icon" style="font-style: normal;font-weight: 600;font-size: 12px;line-height: 14px;letter-spacing: .01em;color: var(--secondary-color-20);">Item name</span> <i data-v-75ee7e3d="" class="sort-icon icon sort-default-icon"></i></div></th><th data-v-75ee7e3d="" class="sortable__col" style="color: #f1f1f1;"><div data-v-75ee7e3d="" class="base-table__sort-column-block hover" style="display:flex;align-items:center;grid-column-gap:9px;-moz-column-gap:9px;column-gap:9px;justify-content:center;"><img data-v-75ee7e3d="" class=" checked checked"> <span data-v-75ee7e3d="" class="icon" style="font-style: normal;font-weight: 600;font-size: 12px;line-height: 14px;letter-spacing: .01em;color: var(--secondary-color-20);">Price</span> <i data-v-75ee7e3d="" class="sort-icon icon sort-default-icon checked checked"></i></div></th><th data-v-75ee7e3d="" class="sortable__col" style="color: #f1f1f1;"><div data-v-75ee7e3d="" class="base-table__sort-column-block hover" style="display:flex;align-items:center;grid-column-gap:9px;-moz-column-gap:9px;column-gap:9px;justify-content:center;"><img data-v-75ee7e3d="" class=" checked checked"> <span data-v-75ee7e3d="" class="icon" style="font-style: normal;font-weight: 600;font-size: 12px;line-height: 14px;letter-spacing: .01em;color: var(--secondary-color-20);">Game</span> <i data-v-75ee7e3d="" class="sort-icon icon sort-default-icon checked checked"></i></div></th><th data-v-75ee7e3d="" class="sortable__col" style="color: #f1f1f1;"><div data-v-75ee7e3d="" class="base-table__sort-column-block hover" style="display:flex;align-items:center;grid-column-gap:9px;-moz-column-gap:9px;column-gap:9px;justify-content:center;"><img data-v-75ee7e3d="" class=" checked checked"> <span data-v-75ee7e3d="" class="icon ion-ios-arrow-down" style="font-style: normal;font-weight: 600;font-size: 12px;line-height: 14px;letter-spacing: .01em;color: var(--secondary-color-20);">Time created</span> <i data-v-75ee7e3d="" class="sort-icon icon ion-ios-arrow-down checked checked"></i></div></th><th data-v-75ee7e3d="" class="sortable__col" style="color: #f1f1f1;"><div data-v-75ee7e3d="" class="base-table__sort-column-block hover" style="display:flex;align-items:center;grid-column-gap:9px;-moz-column-gap:9px;column-gap:9px;justify-content:center;"><img data-v-75ee7e3d="" class=" checked checked"> <span data-v-75ee7e3d="" class="icon" style="font-style: normal;font-weight: 600;font-size: 12px;line-height: 14px;letter-spacing: .01em;color: var(--secondary-color-20);">Time finished</span> <i data-v-75ee7e3d="" class="sort-icon icon sort-default-icon checked checked"></i></div></th><th data-v-75ee7e3d="" class="sortable__col" style="color: #f1f1f1;"><div data-v-75ee7e3d="" class="base-table__sort-column-block hover" style="display:flex;align-items:center;grid-column-gap:9px;-moz-column-gap:9px;column-gap:9px;justify-content:center;"><img data-v-75ee7e3d="" class=" checked checked"> <span data-v-75ee7e3d="" class="icon" style="font-style: normal;font-weight: 600;font-size: 12px;line-height: 14px;letter-spacing: .01em;color: var(--secondary-color-20);">State</span> <i data-v-75ee7e3d="" class="sort-icon icon sort-default-icon checked checked"></i></div></th> <!----></tr></thead>
+<tbody data-v-75ee7e3d="" style="background:#20282d;border-radius:var(--base-block-border-radius);max-height:70px;"><tr data-v-75ee7e3d="" class="base-table__row" style="height:70px !important;"><td data-v-75ee7e3d="" class="" style="height:70px;font-style:normal;font-size:12px;line-height:15px;letter-spacing:.01em;position:relative;text-align:center;cursor:auto;text-align:-webkit-center;color:#737983;"><div data-v-75ee7e3d="" class="base-table__serial-number" style="font-size:16px;line-height:19px;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-style:normal;font-weight:600;letter-spacing:.01em;">
+            ${num}
+          </div></td> <!----> <td data-v-75ee7e3d="" class="" style="height:70px;font-style:normal;font-size:12px;line-height:15px;letter-spacing:.01em;position:relative;text-align:center;cursor:auto;text-align:-webkit-center;"><div data-v-75ee7e3d="" class="base-table__item-img-inner-block" style="width:40px;height:30px;"><img data-v-75ee7e3d="" src="${icon}" alt="icon_url" class="img-lazy base-table__item-img checked" style="width:100%;max-width:65px;"></div></td><td data-v-75ee7e3d="" class="" style="height:70px;font-style:normal;font-size:12px;line-height:15px;letter-spacing:.01em;position:relative;text-align:center;cursor:auto;text-align:-webkit-center;"><div data-v-75ee7e3d="" class="base-table__item-block" style="display:flex;align-items:center;justify-content:center;width:250px;grid-gap:8px;gap:8px;"><div data-v-75ee7e3d="" class="base-table__item-name-block" style=" "><div data-v-75ee7e3d="" class="base-table__item-st checked"></div> <div data-v-6a43928e="" data-v-75ee7e3d="" class="base-tooltip" style="position: relative;display: flex;justify-content: center;align-items: center;min-width: 0;"><div data-v-6a43928e="" class="base-tooltip__main" style="flex:1;width:100%;display:flex;align-items:center;color:#f1f1f1;"><div data-v-75ee7e3d="" data-v-6a43928e="" class="base-table__item-name" style="max-width:210px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-style:normal;font-weight:600;font-size:14px;line-height:17px;color:var(--white-color);">
+${name}</div></div> </div></div> <div data-v-bb3f5218="" data-v-75ee7e3d="" class="copy-button" style="display:flex;align-items:center;justify-content:center;cursor:pointer;"><div data-v-bb3f5218="" class="copy-button__content" style="position:relative;display:flex;align-items:center;grid-gap:6px;gap:6px;"><img data-v-bb3f5218="" src="https://shadowpay.com/_nuxt/img/copy.cc81998.svg" alt="copy" class="copy-button__icon checked" style="width:16px;height:16px;transition:.2s;"> <!----> <!----></div></div></div></td><td data-v-75ee7e3d="" class="" style="height:70px;font-style:normal;font-size:12px;line-height:15px;letter-spacing:.01em;position:relative;text-align:center;cursor:auto;text-align:-webkit-center;"><div data-v-75ee7e3d="" class="base-table__item-price-block base-table__item-price" style="font-style:normal;font-weight:600;font-size:18px;line-height:21px;color:#f1f1f1;"><span data-v-75ee7e3d="" class="currency__symbol" style="color: #30bd91">
+                  $
+                </span>
+                ${price}
+              </div></td><td data-v-75ee7e3d="" class="" style="height:70px;font-style:normal;font-size:12px;line-height:15px;letter-spacing:.01em;position:relative;text-align:center;cursor:auto;text-align:-webkit-center;"><div data-v-75ee7e3d="" class="base-table__item-game-block" style="display:flex;align-items:center;justify-content:center;grid-column-gap:8px;-moz-column-gap:8px;column-gap:8px;"><div data-v-75ee7e3d="" class="base-table__item-game-img" style="width:18px;height:18px;display:flex;align-items:center;justify-content:center;"><img data-v-75ee7e3d="" src="https://shadowpay.com/_nuxt/img/csgo-active.6ccb246.svg" alt="project" class=" checked"></div> <div data-v-75ee7e3d="" class="base-table__item-game-text" style="font-style:normal;font-weight:600;font-size:14px;line-height:17px;color:#f1f1f1;">
+                  CS2
+                </div></div></td><td data-v-75ee7e3d="" class="" style="height:70px;font-style:normal;font-size:12px;line-height:15px;letter-spacing:.01em;position:relative;text-align:center;cursor:auto;text-align:-webkit-center;"><div data-v-75ee7e3d="" class="base-table__item-time-block" style="display:flex;justify-content:center;align-items:center;color:#737983;"><div data-v-75ee7e3d="" class="base-table__item-time-inner-block" style="display:grid;grid-row-gap:8px;row-gap:8px;justify-items:flex-start;"><div data-v-75ee7e3d="" class="base-table__item-data" style="font-style:normal;font-weight:500;font-size:14px;line-height:16px;justify-content:center;">
+                    ${date_1}
+                  </div> <div data-v-75ee7e3d="" class="base-table__item-hours" style="display:flex;grid-column-gap:8px;-moz-column-gap:8px;column-gap:8px;align-items:center;"><div data-v-75ee7e3d="" class="base-table__item-hours-icon checked" style="position:relative;width:12px;height:12px;"><img class="custom_icon" style="display:block;width:12px;height:12px;position:absolute;top:0;left:0;" src="https://shadowpay.com/_nuxt/img/time-icon.4e7070f.svg"></div> <span data-v-75ee7e3d="" class="" style=" ">
+                      ${time_1}
+                    </span></div></div></div></td><td data-v-75ee7e3d="" class="" style="height:70px;font-style:normal;font-size:12px;line-height:15px;letter-spacing:.01em;position:relative;text-align:center;cursor:auto;text-align:-webkit-center;"><div data-v-75ee7e3d="" class="base-table__item-time-block" style="display:flex;justify-content:center;align-items:center;color:#737983;"><div data-v-75ee7e3d="" class="base-table__item-time-inner-block" style="display:grid;grid-row-gap:8px;row-gap:8px;justify-items:flex-start;"><div data-v-75ee7e3d="" class="base-table__item-data" style="font-style:normal;font-weight:500;font-size:14px;line-height:16px;justify-content:center;">
+                    ${date_2}
+                  </div> <div data-v-75ee7e3d="" class="base-table__item-hours" style="display:flex;grid-column-gap:8px;-moz-column-gap:8px;column-gap:8px;align-items:center;"><div data-v-75ee7e3d="" class="base-table__item-hours-icon checked" style="position:relative;width:12px;height:12px;"><img class="custom_icon" style="display:block;width:12px;height:12px;position:absolute;top:0;left:0;" src="https://shadowpay.com/_nuxt/img/time-icon.4e7070f.svg"></div> <span data-v-75ee7e3d="" class="" style=" ">
+                      ${time_2}
+                    </span></div></div></div></td><td data-v-75ee7e3d="" class="" style="height:70px;font-style:normal;font-size:12px;line-height:15px;letter-spacing:.01em;position:relative;text-align:center;cursor:auto;text-align:-webkit-center;"><div data-v-75ee7e3d="" class="base-table__item-state-block" style="display:flex;align-items:center;justify-content:center;grid-column-gap:8px;-moz-column-gap:8px;column-gap:8px;"><div data-v-75ee7e3d="" class="base-table__item-state-icon base-table__item-state-icon_state_finished" style="width:20px;height:20px;overflow:hidden;display:flex;align-items:center;justify-content:center;"><img data-v-75ee7e3d="" src="https://shadowpay.com/_nuxt/img/checked-bold.d05d78e.svg" alt="state" class=" checked"></div> <div data-v-75ee7e3d="" class="base-table__item-state-text base-table__state-finished" style="text-transform:capitalize;font-style:normal;font-weight:600;font-size:14px;line-height:17px;color:#2ebb90;">
+                  Finished
+                </div></div></td> <!----></tr></tbody>
+
+</table>`
+    return createElementFromHTML(base)
+}
+
+function make_other_base(a,b,c) {
+    let number = a
+    let msg = `Look "Other Trades" section below`
+    let name = b
+    let profile = c
+    let base = `<div class="_wrapper" style="width:65%; height: 120px; background-color:#1D2328;transform:scale(0.9); position:absolute; top: 4px; left: 870px;">
+    <div class="_container">
+    <div class="_number" style="width: 100%;text-align: center;font-size: 22px;color: #4DDF9A;">${number}</div>
+    <div class="_msg" style="width: 100%;text-align: center;font-size: 18px; font-weight: 600;">${msg}</div>
+    <div class="_item_name" style="font-size: 16px ;margin-left: 5px; margin-top: 10px;">${name}</div>
+    <div class="_user_steamid" style="font-size: 16px; margin-left: 5px;">${profile}</div>
+    </div></div>`
+    return createElementFromHTML(base)
+}
+function timeConverter(timestamp, m=1) {
+    let t = timestamp*m
+    let a = new Date(t).toLocaleDateString("en-GB")
+    let b = new Date(t).toLocaleTimeString("en-GB")
+    let c = b.split(':')
+    let d = c[0] + ":" + c[1]
+    //let e = `${a} ${d}`
+    return [a,d]
+}
+function convertToTimestamp(dateStr, timeStr=null) {
+    let timeStrNew = timeStr;
+    if (timeStr && timeStr.includes("am")) {
+        timeStrNew = timeStr.replace("am", " am")
+    } else if (timeStr && timeStr.includes("pm")) {
+        timeStrNew = timeStr.replace("pm", " pm")
+    }
+    let dateTimeStr;
+    if (timeStr == null) {
+        dateTimeStr = dateStr;
+    } else {
+        dateTimeStr = `${dateStr} ${timeStrNew}`;
+    }
+
+    const dateObj = new Date(dateTimeStr);
+    //console.log(dateTimeStr)
+
+    const timestamp = Math.floor(dateObj.getTime() / 1000);
+
+    return timestamp;
+}
+function convertToTimestamp_shadow(dateStr, timeStr) {
+    const [day, month, year] = dateStr.split('/');
+    const [hours, minutes] = timeStr.split(':');
+
+    const dateObj = new Date(year, month - 1, day, hours, minutes);
+
+    const timestamp = Math.floor(dateObj.getTime() / 1000);
+
+    return timestamp;
+}
+function date_check(timestamp, item_name) {
+    let timestamp_to_date = timeConverter(timestamp, 1000)
+    let date = timestamp_to_date[0]
+    let time = timestamp_to_date[1]
+    let date_exists = main_obj[date]
+    //console.log(1, date_exists, date, item_name)
+    if (date_exists) {
+        let keys = Object.keys(date_exists)
+        for (let i of keys) {
+            let shadow_timestamp = convertToTimestamp_shadow(date, i)
+            //console.log(2, timestamp, shadow_timestamp, date, i)
+            if (timestamp <= shadow_timestamp && timestamp + 300 >= shadow_timestamp) {
+                let fel = date_exists[i]
+                //console.log(3, fel)
+                for (let index = 0; index < fel.length; index++) {
+                    //console.log(4, fel[index].name, item_name)
+                    if (fel[index].name.includes("StatTrak") && !item_name.includes("StatTrak")) continue
+                    if (fel[index].name.includes(item_name)) {
+                        let res = Object.assign({}, fel[index])
+                        fel.splice(index,1)
+                        return res
+                    }
+                }
+            }
+        }
+    }
+    return null
+}
+function create_btn() {
+    let base = `<button class="_btn" style="position:fixed; height:30px; width:70px; top:50%; right: 0px; background-color: gray;">Add</button>`
+    let el = createElementFromHTML(base)
+    el.onclick = () => {
+        let elems = document.querySelectorAll('#inventory_history_table > div.tradehistoryrow')
+        for (let i of elems) {
+            if (i.classList.contains('checked')) continue
+            let txt = i.querySelector('.tradehistory_event_description')?.innerText
+            let plusminus = i.querySelector('.tradehistory_items_plusminus')?.innerText
+            let type = ""
+            let holder = i.querySelector('.tradehistory_content')
+            let newEl = document.createElement('a')
+            if (txt && txt.includes('Storage')) {
+                type = "storage"
+                newEl.style.color = "red"
+            } else if (txt && txt.includes('Market')) {
+                type = "market"
+                newEl.style.color = "red"
+            } else if (txt && txt.includes('Purchase')) {
+                type = "purchase"
+                newEl.style.color = "red"
+            } else if (txt && txt.includes('Unsealed')) {
+                type = "graffiti"
+                newEl.style.color = "red"
+            } else if (txt && txt.includes('got a drop')) {
+                type = "game_drop"
+                newEl.style.color = "red"
+            } else if (plusminus && plusminus == '-') {
+                type = "outcome"
+                newEl.style.color = "red"
+            } else if (plusminus && plusminus == '+') {
+                type = "income"
+                newEl.style.color = "green"
+            }
+            if (type != "income") {
+                i.style.opacity = "0.5"
+            } else {
+                let raw_date = i.querySelector('div.tradehistory_date').innerText.split('\n')
+                let date = raw_date[0]
+                let time = raw_date[1]
+                let item_name = i.querySelector('.history_item_name').innerText
+                let profile = i.querySelector('.tradehistory_event_description > a')?.href
+                if (item_name) {
+                    let trade_timestamp = convertToTimestamp(date, time)
+                    let res = date_check(trade_timestamp, item_name)
+                    if (res == null) {
+                        let created_el = make_other_base(cc_other, item_name, profile)
+                        holder.appendChild(created_el)
+                        cc_other++
+                    } else {
+                        let created_el = make_html(cc, res.icon, res.name, res.price, res.time_created_time, res.time_finished_time, res.time_created_date, res.time_finished_date)
+                        holder.appendChild(created_el)
+                        cc++
+                    }
+                }
+            }
+            newEl.textContent = type
+            newEl.style.position = "absolute"
+            newEl.style.top = "4px"
+            newEl.style.right = "4px"
+            newEl.style.height = "100%"
+            newEl.style.alignContent = "center"
+            holder.appendChild(newEl)
+            i.className += " checked"
+        }
+    }
+    document.body.appendChild(el)
+}
+create_btn()
